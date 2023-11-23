@@ -1,0 +1,32 @@
+﻿<Window x:Class="AHS.PatientForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AHS"
+        mc:Ignorable="d"
+        Title="PatientForm" Height="450" Width="800"
+		Background="LightBlue">
+    <Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="150"/>
+			<ColumnDefinition Width="300"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="50"/>
+		</Grid.RowDefinitions>
+		<Label Foreground="Red" Grid.Row="0" Content="Full Name:" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+		<Label Foreground="Red" Grid.Row="1" Content="Hospital Name:" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+		<Label Foreground="Red" Grid.Row="2" Content="Debt:" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+		<Label Foreground="Red" Grid.Row="3" Content="Are they insured?" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+		<TextBox Background="Beige"  Grid.Column="1" Grid.Row="0" x:Name="inputName" VerticalAlignment="Center"/>
+		<TextBox Background="Beige" Grid.Column="1" Grid.Row="1" x:Name="inputHospital" VerticalAlignment="Center"/>
+		<TextBox Background="Beige" Grid.Column="1" Grid.Row="2" x:Name="inputDebt" VerticalAlignment="Center" />
+		<CheckBox Background="Beige" Grid.Column="1" Grid.Row="3" x:Name="inputInsured" VerticalAlignment="Center"/>
+		<Button Background="Gray" Foreground="Red" Grid.Column="1" Grid.Row="4" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Add Patient" Click="Button_Click"/>
+	</Grid>
+</Window>

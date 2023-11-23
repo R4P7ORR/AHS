@@ -1,0 +1,63 @@
+﻿<Window x:Class="AHS.Operations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AHS"
+        mc:Ignorable="d"
+        Title="Operations" Height="450" Width="800"
+		Background="LightBlue">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="70"/>
+			<RowDefinition Height="300"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Button HorizontalAlignment="Left" x:Name="routineOperations" Content="Routine Operations" Margin="10" Width="180" Height="40" Click="routineOperations_Click"/>
+		<Button HorizontalAlignment="Right" x:Name="uniqueOperation" Content="Unique Operation" Margin="10" Width="180" Height="40" Click="uniqueOperation_Click"/>
+		
+		<Grid Visibility="Collapsed" x:Name="uniqueInputs" Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="30"/>
+				<RowDefinition Height="30"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Label HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Content="Operation Name:"/>
+			<TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
+			<Label HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1" Content="Cost of Operation:"/>
+			<TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="0,0,10,0"/>
+		</Grid>
+		<Grid x:Name="routineInputs" Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="50"/>
+				<RowDefinition Height="50"/>
+				<RowDefinition Height="50"/>
+				<RowDefinition Height="50"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="250"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Button x:Name="btnKidney" Grid.Row="0" Content="Kidney Transplant" Margin="10"/>
+			<Button x:Name="btnHeart" Grid.Row="1" Content="Open Heart Surgery" Margin="10"/>
+			<Button x:Name="btnVasectomy" Grid.Row="2" Content="Vasectomy" Margin="10"/>
+			<Button x:Name="btnBrain" Grid.Row="3" Content="Brain Transplant" Margin="10"/>
+
+			<Label Content="$442,500" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontSize="20"/>
+			<Label Content="$125,400" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="20"/>
+			<Label Content="$1,580" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" FontSize="20"/>
+			<Label Content="$17,500,000" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" FontSize="20"/>
+		</Grid>
+		<Label Grid.Row="0" Grid.Column="1" Content="Previous Operations:" VerticalAlignment="Bottom" FontSize="22"/>
+		<Label x:Name="patientName" Grid.Row="0" Grid.Column="1" Content="Patient's" VerticalAlignment="Top" FontSize="22"/>
+		<ListBox x:Name="opLog" Margin="10" Grid.Row="1" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+		<Label Content="Total Cost: $0" Grid.Row="2" Grid.Column="1" FontSize="30"/>
+	</Grid>
+</Window>

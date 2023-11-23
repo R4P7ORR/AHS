@@ -1,0 +1,31 @@
+﻿<Window x:Class="AHS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AHS"
+        mc:Ignorable="d"
+        Title="American Hospital Simulator" Height="450" Width="800"
+		Background="Red">
+	<DockPanel>
+		<Grid DockPanel.Dock="Top">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="120"/>
+				<ColumnDefinition Width="120"/>
+				<ColumnDefinition Width="120"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Button Background="Gray" Foreground="Red" Grid.Column="0" Content="Add Patient" Width="90" HorizontalAlignment="Center" Click="btnOpenForm"/>
+			<Button Background="Gray" Foreground="Red" Grid.Column="1" Content="Refresh Data" Width="90" HorizontalAlignment="Center" Click="btnReload"/>
+			<Button Background="Gray" Foreground="Red" Grid.Column="2" Content="Remove Patient" Width="90" HorizontalAlignment="Center" Click="btnRemove"/>
+			<Label Grid.Column="4" Content="To edit a patient's record, double click any data." FontSize="20"/>
+		</Grid>
+		<DataGrid RowBackground="LightBlue" Background="Gray" x:Name="patientTable" d:ItemsSource="{d:SampleData ItemCount=5}" IsReadOnly="True">
+			<DataGrid.Resources>
+				<Style TargetType="{x:Type DataGridCell}">
+					<EventSetter Event="MouseDoubleClick" Handler="DataGridCell_MouseDoubleClick"/>
+				</Style>
+			</DataGrid.Resources>
+		</DataGrid>
+	</DockPanel>
+</Window>
